@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - QWERTY
+  - Function
   - A
   - S
   - D
@@ -111,7 +111,7 @@ layers:
   - PG DN
   - PRINTSCREEN
   - Ins
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - $$mdi:volume-low$$
   - $$mdi:volume-off$$
   - $$mdi:volume-high$$
