@@ -1,6 +1,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -52,7 +53,7 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp ESCAPE      &kp Q  &kp W  &kp E         &kp R      &kp T                                   &kp UP                &kp Y      &kp U      &kp I          &kp O    &kp P     &mo 1
+&kp ESCAPE      &kp Q  &kp W  &kp E         &kp R      &kp T                                   &kp UP                &kp Y      &kp U      &kp I          &kp O    &kp P     &kp MINUS
 &mo 2           &kp A  &kp S  &kp D         &kp F      &kp G                         &kp LEFT  &kp ENTER  &kp RIGHT  &kp H      &kp J      &kp K          &kp L    &kp SEMI  &kp SQT
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp B            &kp SPACE              &kp DOWN              &kp N      &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp BACKSLASH
                               &kp LEFT_ALT  &kp LCTRL  &lt 1 BACKSPACE                                               &kp SPACE  &kp ENTER  &kp RIGHT_WIN
@@ -64,10 +65,10 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&kp GRAVE  &kp N1           &kp N2          &kp N3  &kp N4  &kp N5                                         &mmv MOVE_UP                     &kp N6           &kp N7  &kp N8  &kp N9  &kp N0   &trans
-&trans     &kp F1           &kp F2          &kp F3  &kp F4  &kp F5                         &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F6           &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans     &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans  &trans  &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &trans  &trans  &trans  &trans   &kp F12
-                                            &trans  &trans  &trans                                                                          &trans           &trans  &trans
+&kp GRAVE  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                &mmv MOVE_UP                     &kp F6           &kp F7  &kp F8         &kp F9  &kp F10  &kp BACKSPACE
+&trans     &kp N1   &kp N2   &kp N3  &kp N4  &kp N5                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp N6           &kp N7  &kp N8         &kp N9  &kp N0   &kp MINUS
+&trans     &kp F11  &kp F12  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &trans  &trans         &trans  &trans   &kp EQUAL
+                             &trans  &trans  &trans                                                                 &trans           &trans  &kp BACKSPACE
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -75,21 +76,21 @@
 
         Function {
             bindings = <
-&trans  &trans        &trans      &trans           &trans  &trans                        &trans          &trans  &kp PG_UP  &kp UP    &kp PG_DN  &kp PRINTSCREEN  &kp INSERT
-&trans  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOLUME_UP  &trans  &trans                &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans           &trans
-&trans  &trans        &trans      &trans           &trans  &trans      &trans            &trans          &trans  &trans     &trans    &trans     &trans           &trans
-                                  &trans           &trans  &kp DELETE                                    &trans  &trans     &trans
+&trans  &kp C_PREV       &kp C_PP         &kp C_NEXT       &trans  &trans                                 &trans          &trans  &kp PG_UP  &kp UP    &kp PG_DN  &kp PRINTSCREEN  &kp INSERT
+&trans  &kp C_VOL_DN     &kp C_MUTE       &kp C_VOLUME_UP  &trans  &trans                         &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans           &trans
+&trans  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &trans  &trans      &rgb_ug RGB_TOG            &trans          &trans  &trans     &trans    &trans     &trans           &mo 3
+                                          &trans           &trans  &kp DELETE                                             &trans  &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_PREV C_NEXT>;
+            sensor-bindings = <&rgb_encoder>;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                                    &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans  &trans                            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &trans  &bt BT_CLR_ALL            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans  &trans          &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans  &trans                                            &trans  &trans  &trans
             >;
         };
     };
