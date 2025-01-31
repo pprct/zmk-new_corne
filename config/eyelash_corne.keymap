@@ -53,9 +53,9 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp ESCAPE      &kp Q  &kp W  &kp E         &kp R      &kp T                                   &kp UP                &kp Y      &kp U      &kp I          &kp O    &kp P     &kp MINUS
+&kp TAB         &kp Q  &kp W  &kp E         &kp R      &kp T                                   &kp UP                &kp Y      &kp U      &kp I          &kp O    &kp P     &kp MINUS
 &mo 2           &kp A  &kp S  &kp D         &kp F      &kp G                         &kp LEFT  &kp ENTER  &kp RIGHT  &kp H      &kp J      &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp B            &kp SPACE              &kp DOWN              &kp N      &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp BACKSLASH
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp B            &kp SPACE              &kp DOWN              &kp N      &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp ESCAPE
                               &kp LEFT_ALT  &kp LCTRL  &lt 1 BACKSPACE                                               &kp SPACE  &kp ENTER  &kp RIGHT_WIN
             >;
 
@@ -76,10 +76,10 @@
 
         Function {
             bindings = <
-&trans  &kp C_PREV       &kp C_PP         &kp C_NEXT       &trans  &trans                                 &trans          &trans  &kp PG_UP  &kp UP    &kp PG_DN  &kp PRINTSCREEN  &kp INSERT
-&trans  &kp C_VOL_DN     &kp C_MUTE       &kp C_VOLUME_UP  &trans  &trans                         &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans           &trans
-&trans  &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &trans  &trans      &rgb_ug RGB_TOG            &trans          &trans  &trans     &trans    &trans     &trans           &mo 3
-                                          &trans           &trans  &kp DELETE                                             &trans  &trans     &trans
+&kp ESCAPE  &kp C_PREV       &kp C_PP         &kp C_NEXT       &trans  &trans                                 &trans          &trans  &kp PG_UP  &kp UP    &kp PG_DN  &kp PRINTSCREEN  &kp INSERT
+&trans      &kp C_VOL_DN     &kp C_MUTE       &kp C_VOLUME_UP  &trans  &trans                         &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans           &trans
+&trans      &rgb_ug RGB_EFF  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &trans  &trans      &rgb_ug RGB_TOG            &trans          &trans  &trans     &trans    &trans     &trans           &mo 3
+                                              &trans           &trans  &kp DELETE                                             &trans  &trans     &trans
             >;
 
             sensor-bindings = <&rgb_encoder>;
